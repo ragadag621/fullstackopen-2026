@@ -5,6 +5,7 @@ const PersonForm = ({
   handleNameChange,
   handleNumberChange,
 }) => {
+  console.log("PersonForm rendered")
   return (
     <form onSubmit={addPerson}>
       <table>
@@ -13,12 +14,14 @@ const PersonForm = ({
             <td>name:</td>
             <td>
               <input value={newName} onChange={handleNameChange} />
+              <br />
             </td>
           </tr>
           <tr>
             <td>number:</td>
             <td>
-              <input value={number} onChange={handleNumberChange} />
+              <input type="number" value={number} onChange={handleNumberChange} />
+              <br />
             </td>
           </tr>
         </tbody>

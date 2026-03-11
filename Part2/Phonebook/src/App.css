@@ -1,10 +1,101 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: left;
+/* تنسيق عام للجسم */
+body {
+  background-color: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e293b;
+  margin: 0;
+  padding: 20px;
 }
 ul {
   list-style: none;
   padding: 0;
+}
+/* حاوية التطبيق الرئيسية */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* العناوين */
+h2, h3 {
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-top: 1.5rem;
+}
+
+/* تنسيق الجدول */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s;
+}
+
+tr:hover {
+  background-color: #f1f5f9; /* تأثير عند مرور الماوس */
+}
+
+td {
+  padding: 12px 8px;
+}
+
+/* أزرار الحذف */
+button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* تنسيق المدخلات (Inputs) */
+input {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box; /* عشان العرض يضل دقيق */
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  ring: 2px #3b82f6;
+}
+.notification {
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 5px rgb(153, 229, 153);
+  border-color: green;
+}
+
+.error {
+  color: rgb(229, 184, 184);
+  text-shadow: 0 0 5px rgb(229, 184, 184);
+  border-color: red;
 }

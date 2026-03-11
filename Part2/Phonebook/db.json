@@ -1,0 +1,60 @@
+{
+  "persons": [
+    {
+      "id": "1",
+      "name": "Arto Hellas",
+      "number": "040123456"
+    },
+    {
+      "id": "2",
+      "name": "Ada Lovelace",
+      "number": "045323523"
+    },
+    {
+      "id": "3",
+      "name": "Dan Abramov",
+      "number": "032343457"
+    },
+    {
+      "id": "4",
+      "name": "Mary Pop",
+      "number": "\t0521234897"
+    },
+    {
+      "id": "5",
+      "name": "Raghad Teacher",
+      "number": "0521234567"
+    },
+    {
+      "id": "6",
+      "name": "Samira Tech",
+      "number": "0549876543"
+    },
+    {
+      "id": "7",
+      "name": "Ahmad Software",
+      "number": "0505554433"
+    },
+    {
+      "id": "8",
+      "name": "Noa Cohen",
+      "number": "0532211000"
+    },
+    {
+      "id": "9",
+      "name": "Youssef Dev",
+      "number": "0587778899"
+    },
+    {
+      "id": "10",
+      "name": "Maya Levi",
+      "number": "0524400550"
+    },
+    {
+      "id": "fde9",
+      "name": "ahmad ali",
+      "number": "05921344"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

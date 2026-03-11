@@ -1,6 +1,8 @@
 const Filter = ({ filter, handlefilterChange }) => {
+  console.log("Filter rendered")
   return (
     <>
+    
       <ul>
         <li>
           filter shown with{" "}

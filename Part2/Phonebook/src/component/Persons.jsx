@@ -1,14 +1,20 @@
-const Persons = ({filteredPersons}) => {
+const Persons = ({ filteredPersons, deletePerson }) => {
+  console.log("Persons rendered")
   return (
     <>
-      <ul>
-        {filteredPersons.map((person) => (
-          <li key={person.name}>
-            {person.name}
-            {person.number}
-          </li>
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          {filteredPersons.map((person) => (
+            <tr key={person.id}>
+              <td>{person.name}{" "}</td>
+              <td>{person.number}</td>
+              <td>
+                <button onClick={() => deletePerson(person.id)}>delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   )
 }
