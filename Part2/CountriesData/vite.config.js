@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/react-refresh' // أو @vitejs/plugin-react حسب شو عندك
+import react from '@vitejs/plugin-react' 
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({

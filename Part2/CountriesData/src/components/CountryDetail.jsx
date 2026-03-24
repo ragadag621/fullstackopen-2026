@@ -26,7 +26,7 @@ const CountryDetail = ({
    * we calculate the inverse of the API rate (1 / rate).
    */
   const rateFromApi = rates && currencyCode ? rates[currencyCode] : null
-  const inverseRate = rateFromApi ? 1 / rateFromApi : null
+  const inverseRate = rateFromApi ? rateFromApi : null
   const result = amount && inverseRate ? (amount * inverseRate).toFixed(2) : 0
 
   return (

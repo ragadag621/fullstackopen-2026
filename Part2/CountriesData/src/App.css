@@ -149,41 +149,42 @@ body {
   letter-spacing: 0.5px;
   margin-bottom: 2px;
 }
-
 .converter-section {
-  background: var(--bg-soft);
-  padding: 20px;
+  background: #f8fafc;
+  padding: 15px;
   border-radius: 18px;
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
 .calculation-controls {
   display: flex;
-  gap: 12px;
+  flex-direction: column; /* فوق بعض للموبايل */
+  gap: 10px;
   margin-bottom: 15px;
 }
 
 .currency-dropdown, .amount-field {
-  flex: 1;
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  font-size: 0.9rem;
-  outline-color: var(--primary);
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .conversion-result-container {
-  background: linear-gradient(135deg, #f5fcf7, #b9f5ce);
-  padding: 20px;
-  border-radius: 15px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  padding: 15px;
+  border-radius: 12px;
   text-align: center;
-  border-right: 15px solid var(--primary-green);
+  border-left: 5px solid var(--success);
 }
 
 .result-main-text span {
   color: var(--success);
   font-size: 1.8rem;
   font-weight: 800;
+  
 }
 
 .weather-card {
@@ -209,16 +210,16 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 15px;
+  justify-content: center;
 }
 
 .language-tag {
-  background: #eff6ff;
-  color: var(--primary);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid #dbeafe;
+    background: #eff6ff;
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .map-link-btn {
