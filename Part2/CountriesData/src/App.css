@@ -1,137 +1,253 @@
-/* تنسيقات عامة */
 :root {
-  --primary-color: #2563eb;
-  --bg-color: #f8fafc;
-  --text-main: #1e293b;
+  --primary: #2563eb;       
+  --primary-dark: #1d4ed8;
+  --success: #15803d;       
+  --bg-main: #ffffff;
+  --bg-soft: #f8fafc;       
+  --text-dark: #0f172a;    
   --text-muted: #64748b;
-  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-
 body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   margin: 0;
+  line-height: 1.5;
   display: flex;
   justify-content: center;
 }
 
 #root {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px; 
   padding: 40px 20px;
 }
 
-h1 {
-  text-align: center;
-  color: var(--primary-color);
+
+.app-header h1 {
+  font-size: 1.8rem;
   font-weight: 800;
+  color: var(--primary);
+  text-align: center;
   margin-bottom: 30px;
+  letter-spacing: -0.5px;
 }
 
-/* صندوق البحث */
 .search-box {
-  background: var(--card-bg);
-  padding: 15px 25px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  background: var(--bg-soft);
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1.5px solid transparent;
+  width: 85%;
+  margin: 0 auto 40px auto;
+  transition: all 0.3s ease;
+  gap: 12px;
+}
+
+.search-box:focus-within {
+  background: white;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+#search-img {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(1);
+  opacity: 0.6;
 }
 
 .search-box input {
-  border: #1e293b;
-  background-color: transparent;
-  padding-left: 20px;
-  width: 90%;
-  height: 80%;
-  border-radius:50px;
-  font-size: 1.1rem;
-  color: #1e293b;}
-
-/* بطاقة الدولة */
-.country-card {
-  background: var(--card-bg);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  animation: fadeIn 0.5s ease;
-}
-
-.flag-img {
+  border: none;
+  background: transparent;
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-dark);
 }
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  margin: 20px 0;
+#icon{
+  width: 30px;
 }
-.languages-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  
-}
-
-.languages-list li {
-  background: #eff6ff;
-  color: var(--primary-color);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-.weather-info {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 25px;
-  text-align: center;
-}
-
-.weather-info img {
-  width: 80px;
-}
-
-/* قائمة الدول (عند البحث) */
 .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 14px 20px;
   background: white;
-  margin-bottom: 8px;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
   transition: 0.2s;
 }
 
 .list-item:hover {
+  border-color: var(--primary);
   transform: translateX(5px);
+  box-shadow: var(--shadow-sm);
 }
 
-button {
-  background: var(--primary-color);
+.list-item button {
+  background: var(--primary);
   color: white;
   border: none;
-  padding: 6px 15px;
+  padding: 6px 14px;
   border-radius: 8px;
-  cursor: pointer;
   font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+/* 4. Country Card - بطاقة التفاصيل */
+.country-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  background: white;
+  box-shadow: var(--shadow-md);
+  animation: slideUp 0.4s ease-out;
+}
+
+.flag-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.country-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* 5. Info Grid - شبكة المعلومات */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.info-item strong {
+  display: block;
+  color: var(--primary);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+/* 6. Converter Section - المحول الأخضر */
+.converter-section {
+  background: var(--bg-soft);
+  padding: 20px;
+  border-radius: 18px;
+  margin: 25px 0;
+}
+
+.calculation-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.currency-dropdown, .amount-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline-color: var(--primary);
+}
+
+.conversion-result-container {
+  background: linear-gradient(135deg, #f5fcf7, #b9f5ce);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  border-right: 15px solid var(--primary-green);
+}
+
+.result-main-text span {
+  color: var(--success);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+/* 7. Weather & Languages */
+.weather-card {
+  background: linear-gradient(235deg, #77a6f2e3, #284eb6);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.temperature {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.languages-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.language-tag {
+  background: #eff6ff;
+  color: var(--primary);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #dbeafe;
+}
+
+/* 8. Footer Link */
+.map-link-btn {
+  display: block;
+  text-align: center;
+  background: var(--text-dark);
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 25px;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.status-msg {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-weight: 500;
 }
