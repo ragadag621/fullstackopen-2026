@@ -1,8 +1,5 @@
 const mongoose = require("mongoose")
 
-// const password = process.argv[2]
-// const url = `mongodb+srv://ragadag62_db_user:${password}@cluster0.t7ysymh.mongodb.net/phonebookApp?retryWrites=true&w=majority`
-
 mongoose.set("strictQuery", false)
 
 const url = process.env.MONGODB_URI
