@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-  "title": "React Hooks are Awesome",
+  "title": "React are Awesome",
   "author": "Raghad Aghbaria",
   "url": "https://raghad-blog.com/react-hooks",
-  "likes": 10
+  "likes": 5
 }
