@@ -109,7 +109,7 @@ test("blog without author is added", async () => {
 
   const blogsAtEnd = await api.get("/api/blogs")
 
-  assert.strictEqual(blogsAtEnd.body.length, blogsAtStart.body.length+1)
+  assert.strictEqual(blogsAtEnd.body.length, blogsAtStart.body.length + 1)
 })
 test("blog without url is not added", async () => {
   const newBlog = {
@@ -125,6 +125,28 @@ test("blog without url is not added", async () => {
   const blogsAtEnd = await api.get("/api/blogs")
 
   assert.strictEqual(blogsAtEnd.body.length, blogsAtStart.body.length)
+})
+
+test("one bloge can be deleted", async () => {
+  const blogAsStart = await api.get("/api/blogs")
+  const blogToDelete = blogAsStart.body[0]
+  await api.delete(`/api/blogs/${blogToDelete.id}`).expect(204)
+  const blogsAtEnd = await api.get("/api/blogs")
+  assert.strictEqual(blogsAtEnd.body.length, blogAsStart.body.length - 1)
+  const titles = blogsAtEnd.body.map((blog) => blog.title)
+  assert(!titles.includes(blogToDelete.title))
+})
+test("one bloge can be updated", async () => {
+  const updatedBlog = {
+    likes: 100,
+  }
+  const blogAsStart = await api.get("/api/blogs")
+  const blogToupdat = blogAsStart.body[0]
+  await api.put(`/api/blogs/${blogToupdat.id}`).send(updatedBlog).expect(200)
+  const blogsAtEnd = await api.get("/api/blogs")
+  assert.strictEqual(blogsAtEnd.body.length, blogAsStart.body.length)
+  const titles = blogsAtEnd.body.map((blog) => blog.title)
+  assert(titles.includes(blogToupdat.title))
 })
 
 after(async () => {
